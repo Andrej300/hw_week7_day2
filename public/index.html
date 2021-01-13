@@ -9,14 +9,13 @@
 </head>
 <body>
     <div id="app">
-        <h1>Converter</h1>
-        <!-- <input v-model="countryToFilter"> -->
-
-        <!-- <h3>Selected Country Details</h3> -->
-        <!-- <p>Country name: {{ filterCountry[0] }}</p> -->
-        <!-- <p>image of country flag</p> -->
-        
-
-    </div>
-</body>
-</html>
+        <h1>Currency Converter</h1>
+    <form id="currencyForm">
+      <span>Convert</span>
+      <input type="number" v-model="base" min="0">
+      <select v-model="base">
+        <option v-for="(value, key) in rates"> {{ key }} </option>
+      </select>
+      <span><a v-on:click="swapCurrencies"><i class="exchange"></i></a></span>
+      <select v-model="selectedCurrency">
+ 
